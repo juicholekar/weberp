@@ -23,7 +23,7 @@ class Workorder(models.Model):
 
 class Production(models.Model):
 	Workorder_id = models.ForeignKey(Workorder, on_delete=models.CASCADE)
-	production_date = models.DateTimeField(default=timezone.now)
+	production_date = models.DateField(default=timezone.now)
 	shift = models.CharField(max_length=1, choices=shift)
 	item = models.ForeignKey(Item, on_delete=models.CASCADE)
 	batch_number = models.PositiveIntegerField()

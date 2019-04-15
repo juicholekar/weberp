@@ -22,6 +22,7 @@ class Purchase(models.Model):
 	counts=models.PositiveIntegerField(null=True, blank=True)
 	sgst=models.FloatField(null=True, blank=True, editable=False)
 	grand_total=models.PositiveIntegerField(editable=False)
+	received_date = models.DateField(null=True)
 
 
 	def __str__(self):
@@ -37,8 +38,9 @@ class Purchase(models.Model):
 
 	def received(self):
 		self.receives = True
+		self.received_date = timezone.now()
 		self.save()
 
 	def count(self, *args, **kwargs):
-		self.counts = self.counts + self.quantity
+		self.counts = Purchase.objects.values('rawitem').annotate(total=Sum('quantity'))
 		super(Purchase, self).save(*args, **kwargs)

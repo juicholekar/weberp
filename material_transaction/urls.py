@@ -12,5 +12,7 @@ urlpatterns =[
 	path('raw_item/<int:pk>/delete', views.deleterawitem, name='deleterawitem'),
 	path('purchase-order/list', views.purchase_order_list, name='purchase_order'),
 	path('material_received/<int:pk>', views.material_received, name='material_received'),
+	path('count/', views.count, name='count'),
+
 
 ]	

@@ -21,10 +21,10 @@
     body {font-family: Arial, Helvetica, sans-serif;}
 
     html,body{
-    background-image: url('http://getwallpapers.com/wallpaper/full/8/d/5/235984.jpg');
+    background-image: url('http://getwallpapers.com/wallpaper/full/3/8/e/520446.jpg');
     background-size: cover;
     background-repeat: no-repeat;
-    height: 100%;
+    height: auto;
     font-family: 'Numans', sans-serif;
     }
 
@@ -116,11 +116,6 @@
     <div class="card">
       <div class="card-header">
         <h3>Sign In</h3>
-       <!--  <div class="d-flex justify-content-end social_icon">
-          <span><i class="fab fa-facebook-square"></i></span>
-          <span><i class="fab fa-google-plus-square"></i></span>
-          <span><i class="fab fa-twitter-square"></i></span>
-        </div> -->
       </div>
       <div class="card-body">
         <form>
@@ -141,6 +136,10 @@
               <input type="submit" value="Login" class="btn float-right login_btn"> <input type="hidden" value="{{ next }}">
         <br/>
           </div>
+          <p style="margin-left:114px;">
+          <a href="{% url 'password_reset' %}">Forgot password?</a>
+        </p>
+
         </form>
       </div>
     </div>

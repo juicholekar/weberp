@@ -3,6 +3,7 @@ from django.shortcuts import render, redirect
 from .models import Rawitem, Purchase
 from .forms import RawitemForm,PurchaseForm
 from django.shortcuts import get_object_or_404
+from django.db.models import Sum
 # Create your views here.
 def raw_item_master(request):
 	rawitem = Rawitem.objects.all()
@@ -60,6 +61,7 @@ def material_received(request, pk):
 
 def received(self):
 	self.receives = True
+	self.received_date = timezone.now()
 	self.save()
 	
 def material_received_list(request):
@@ -68,3 +70,7 @@ def material_received_list(request):
 
 def stock(request):
 	return render(request, 'material/stock.html',)
+
+def count(request):
+	count = Purchase.objects.values('rawitem').annotate(total=Sum('quantity'))
+	return render(request, 'material/count.html',{'count':count})

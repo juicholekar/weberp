@@ -1,7 +1,8 @@
- {% extends 'base.html' %}
+
+  {% extends 'base.html' %}
 
 {% block content %}
-<a class="btn btn-primary" href="{% url 'new_production' %}" role="button">Add New Production</a> <hr/>
+<center><h3>Daily Production</h3></center></br>
 <table class="table">
   <thead class="thead-light">
     <tr>
@@ -10,13 +11,12 @@
       <th scope="col">Shift</th>
       <th scope="col">Item</th>
       <th scope="col">Batch number</th>
-<th scope='col'>Total Production</th>
-<th scope='col'>Packaging</th>
-
+      <th scope='col'>Total Production</th>
     </tr>
   </thead>
   <tbody>
-{% for detail in production %}
+    {% if d_report %}
+    {% for detail in d_report %}
     <tr>
       <th scope="row"> {{ detail.id }}</th>
       <td>{{ detail.production_date }}</td>
@@ -24,9 +24,9 @@
       <td>{{ detail.item }}</td>
       <td>{{ detail.batch_number }}</td>
       <td>{{ detail.total_production }}</td>
-      <td><a class="btn btn-link" href="{% url 'item_packed' detail.id %}"> Pack </a>
     </tr>
-    {% endfor %}
+       {% endfor %}
+  {% endif %}
   </tbody>
 </table> 
 {% endblock %}

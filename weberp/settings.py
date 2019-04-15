@@ -1,3 +1,4 @@
+
 """
 Django settings for weberp project.
 
@@ -25,7 +26,7 @@ SECRET_KEY = 'qh%lx6to5!%f4ue@=)zm=jsf=67nv%#ua!t=%87yyhpwhf#x+h'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['juicholekar.pythonanywhere.com']
+ALLOWED_HOSTS = []
 
 
 # Application definition
@@ -44,7 +45,18 @@ INSTALLED_APPS = [
     'crispy_forms',
     'accounts',
     'report',
+    'django_filters',
+    'password_reset',
 ]
+
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_USE_TLS = True
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_HOST_USER = 'praveenpatil5621@gmail.com'
+EMAIL_HOST_PASSWORD = '9164928602'
+EMAIL_PORT = 587
+
+
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',

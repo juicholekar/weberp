@@ -19,6 +19,8 @@
     <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/fontawesome.js" integrity="sha384-6OIrr52G08NpOFSZdxxz1xdNSndlD4vdcf/q2myIUVO0VsqaGHJsB0RaBE01VTOY" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
     <link rel="stylesheet" href="/resources/demos/style.css">
+
+
 </head>
 
 <body>
@@ -32,7 +34,8 @@
                 <ul class="ist-unstyled components">
                     <p > Admin </p>
                     <li class="active">
-                        <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
+                        <a  href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
+
                             <i class="fas fa-user-circle"></i>
                             Master
                         </a>
@@ -64,9 +67,9 @@
                         <li>
                             <a href="{% url 'material_received_list' %}">material received list</a>
                         </li>
-                        <li>
+                       <!--  <li>
                             <a href="{% url 'stock' %}">Stock</a>
-                        </li>
+                        </li> -->
                   </ul>
                 </li>
                 
@@ -85,9 +88,9 @@
                         <li>
                             <a href="{% url 'packorder' %}">Packed Product</a>
                         </li>
-                        <li>
+                       <!--  <li>
                             <a href="">Raw material used</a>
-                        </li>
+                        </li> -->
                         <li>
                             <a href="{% url 'dispatched_list' %}" >Dispatch</a>
                         </li>
@@ -104,11 +107,11 @@
         </nav>
 
         <!-- Page Content  -->
-        <div id="content">
-
-            <nav class="navbar navbar-expand-lg navbar navbar-dark bg-dark">
+        <div id="content" >
+         <!-- <img src="{% static 'image/img1.jpg' %}" class="img-fluid" alt="Responsive image"  height="1300" width="1200px"> -->
+          <nav class="navbar navbar-expand-lg navbar-light bg-light">
                 <div class="container-fluid">
-                    <button type="button" id="sidebarCollapse" class="btn btn-info">
+                   <button type="button" id="sidebarCollapse" class="btn btn-info">
                         <i class="fas fa-align-left"></i>
                         <span> Menu</span>
                     </button>
@@ -120,14 +123,12 @@
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
                         <ul class="nav navbar-nav ml-auto">
                             <li class="nav-item dropdown">
-                                <a class="nav-link " href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="fas fa-bars"> 
-                                  More
+                                <a class="nav-link-dark " href="{% url 'logout' %}"> 
+                                  Logout
                                 </a>
-                                <div class="dropdown-menu" aria-labelledby="navbarDropdown" style="margin-left: -86px">
-                                  <a class="dropdown-item" href="#">Profile</a>
-                                  <a class="dropdown-item" href="#">Setting</a>
-                                  <a class="dropdown-item" href="{% url 'logout' %}">Log Out</a>
-                                </div>
+                                <!-- <div class="dropdown-menu" aria-labelledby="navbarDropdown" style="margin-left: -86px">
+                                  <a class="dropdown-item" href="/accounts/logout/">Log Out</a>
+                                </div> -->
                               </li>
                         </ul>
                     </div>

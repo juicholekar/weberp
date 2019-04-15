@@ -2,8 +2,20 @@
 {% load static %}
  
  {% block content %}
-<!--  <img src="{% static 'image/industrial.jpg' %}" class="img-fluid" alt="Responsive image" height="1300" width="1200px"> -->
-	<!-- <img src="{% static 'image/industrial.jpg' %}" no-repeat;  background-size: 1300px 660px;> -->
-	<div style="background-image: url('http://getwallpapers.com/wallpaper/full/4/7/4/235675.jpg') no-repeat;  background-size: 1430px 730px;">
-	</div>
+
+ <style type="text/css">
+    html,body{
+    background-image: url('http://getwallpapers.com/wallpaper/full/8/d/5/235984.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100%;
+    font-family: 'Numans', sans-serif;
+    }
+    
+</style>
+
+ <!-- <img backgroud="{% static 'image/img1.jpg' %}" class="img-fluid" alt="Responsive image"  height="1300" width="1200px"> -->
+	<!-- <img src="{% static 'image/img1.jpg' %}" style="margin-top: -130px;margin-left: -20px;height: 698px;"> -->
+	<!-- <div style="background-image: url('http://getwallpapers.com/wallpaper/full/4/7/4/235675.jpg') no-repeat;  background-size: 1430px 730px;">
+	</div> -->
  {% endblock %}

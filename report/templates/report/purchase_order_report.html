@@ -1,37 +1,34 @@
 {% extends 'base.html' %}
 
 {% block content %}
- <nav aria-label="breadcrumb">
-  <ol class="breadcrumb">
-    <li class="breadcrumb-item"><a href="{% url 'master' %}">master</a></li>
-    <li class="breadcrumb-item active" aria-current="page">Received</li>
-  </ol>
-</nav>
-<center><h3>Recieved Materials</h3></center></br>
+<center><h3>Purchased List</h3></center></br>
 <table class="table">
   <thead class="thead-light">
     <tr>
       <th scope="col">Purchase Id</th>
-      <th scope="col">Recieved Date</th>
       <th scope="col">Raw Item Name</th>
       <th scope="col">Raw-Item-Rate</th>
       <th scope="col">Quantity</th>
       <th scope="col">Supplier</th>
        <th scope="col"> Total rate </th>
+       <th scope="col"> Recieved Material </th>
     </tr>
   </thead>
   <tbody>
-{% for detail in materials %}
+{% if p_report %}
+{% for detail in p_report %}
     <tr>
       <th scope="row"> {{ detail.id }}</th>
-      <td>{{ detail.received_date }}</td>
       <td>{{ detail.rawitem }}</td>
       <td>{{ detail.rawitem.rate }}</td>
       <td>{{ detail.quantity }}</td>
       <td>{{ detail.supplier }}</td>
       <td>{{ detail.total }}</td>
+       <td> <a class="btn btn-link" href="{% url 'purchase_bill' pk=detail.pk %}"> Print </a> </td>
     </tr>
     {% endfor %}
+    {% endif %}
   </tbody>
 </table> 
 {% endblock %}
+

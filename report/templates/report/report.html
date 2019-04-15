@@ -15,11 +15,13 @@
 
     <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
       <div class="card-body text-dark">
-      	{% csrf_token %}
-      	<form method='POST'>
-      		<input class="form-control col-md-4" type="text" placeholder="Default input">
- 
-      	</form>
+  <form method="GET" action="{% url 'purchase_report' %}">
+    {% csrf_token %}
+    <input type='text' name='search' placeholder="Search">
+  
+    <button type="submit">Search</button>
+  </form>
+  
 
       </div>
     </div>
@@ -27,26 +29,21 @@
   <div class="card">
     <div class="card-header" id="headingTwo">
       <h2 class="mb-0">
-        <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-          Purchase Order Report
+        <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">   
+                  Purchase Order Report
+                  </button>
 
-
-        </button>
       </h2>
     </div>
     <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
       <div class="card-body">
           
-          <form method="POST" action="">
+           <form method="GET" action="{% url 'purchase_order_report' %}">
             {% csrf_token %}
-            <label> From </label>
-            <input class="form-control col-md-4 datepicker" name='from_date'>
-            <label> To </label>
-            <input class="form-control col-md-4 datepicker" name='to_date'> <br/>
-
-            <button type="submit" class="btn btn-primary">Submit</button>
+             <input type='text' name='from_date' placeholder="From Date" class="form-control col-md-4 datepicker">
+              <input type='text' name='to_date' placeholder="To Date" class="form-control col-md-4 datepicker">
+              <button type="submit">Search</button>
           </form>
-
       </div>
     </div>
   </div>
@@ -60,7 +57,12 @@
     </div>
     <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
       <div class="card-body">
-        
+        <form method="GET" action="{% url 'dispatch_order_report' %}">
+            {% csrf_token %}
+             <input type='text' name='from_date' placeholder="From Date" class="form-control col-md-4 datepicker">
+              <input type='text' name='to_date' placeholder="To Date" class="form-control col-md-4 datepicker">
+              <button type="submit">Search</button>
+          </form>
 
       </div>
     </div>
@@ -75,7 +77,11 @@
     </div>
     <div id="collapseFour" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
       <div class="card-body">
-        
+         <form method="GET" action="{% url 'daily_order_report' %}">
+          {% csrf_token %}
+          <input type='text' name='p_date' placeholder="Date" class="form-control col-md-4 datepicker">
+          <button type="submit">Search</button>
+          </form>
 
       </div>
     </div>
