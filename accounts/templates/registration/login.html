@@ -109,6 +109,12 @@
 </head>
 
 <body>
+{% if form.errors %}
+<script type="text/javascript">
+  alert("username or password not correct")
+</script>
+    
+{% endif %}
   <form action="{% url 'login' %}" method="post">
       {% csrf_token %}
   <div class="container">
@@ -136,8 +142,8 @@
               <input type="submit" value="Login" class="btn float-right login_btn"> <input type="hidden" value="{{ next }}">
         <br/>
           </div>
-          <p style="margin-left:114px;">
-          <a href="{% url 'password_reset' %}">Forgot password?</a>
+          <p style="margin-top: -40px;">
+          <a class="btn btn-warning" href="{% url 'password_reset' %}">Forgot password?</a>
         </p>
 
         </form>

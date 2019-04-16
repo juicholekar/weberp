@@ -21,6 +21,9 @@ class Workorder(models.Model):
 		self.total = self.Select_item.price*self.Quantity
 		super(Workorder, self).save(*args,**kwargs)
 
+	def __unicode__(self):
+		return str(self.Select_item)
+
 class Production(models.Model):
 	Workorder_id = models.ForeignKey(Workorder, on_delete=models.CASCADE)
 	production_date = models.DateField(default=timezone.now)

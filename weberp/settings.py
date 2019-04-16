@@ -26,7 +26,7 @@ SECRET_KEY = 'qh%lx6to5!%f4ue@=)zm=jsf=67nv%#ua!t=%87yyhpwhf#x+h'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = [ 'http://juicholekar.pythonanywhere.com/']
+ALLOWED_HOSTS = []
 
 
 # Application definition
@@ -47,6 +47,7 @@ INSTALLED_APPS = [
     'report',
     'django_filters',
     'password_reset',
+    'reset_migrations',
 ]
 
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
