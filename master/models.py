@@ -1,7 +1,9 @@
 from django.db import models
 from django.utils import timezone
+# from django.core.validators import RegexValidator
 
 # Create your models here.
+# alpha = RegexValidator(r'^[a-zA-Z]$', 'Only alpha characters are allowed.')
 
 class Customer(models.Model):
 	name = models.CharField(max_length=50)

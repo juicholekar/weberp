@@ -4,7 +4,7 @@ from master.models import Supplier
 # Create your models here.
 class Rawitem(models.Model):
 	itemcode = models.CharField(max_length=50)
-	item_name = models.CharField(max_length=10)
+	item_name = models.CharField(max_length=50)
 	rate = models.PositiveIntegerField(blank=True)
 	description = models.TextField()
 	created_date = models.DateTimeField(default=timezone.now)
